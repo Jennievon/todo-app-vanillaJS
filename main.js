@@ -1,22 +1,12 @@
 const todos = document.querySelector('#todos'),
-  form = document.querySelector('form'),
   newItem = document.querySelector('#newItem');
-
-form.addEventListener('submit',
-  function (event) {
-    event.preventDefault();
-    todos.innerHTML += '<li>' + newItem.value + '</li>';
-    store();
-    newItem.value = "";
-  }, false);
 
 todos.addEventListener('click',
   function (e) {
     let todo = e.target;
     if (todo.classList.contains('checked')) {
       todo.parentNode.removeChild(todo);
-    }
-    else {
+    } else {
       todo.classList.add('checked');
     }
     store();

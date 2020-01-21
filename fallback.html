@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="/manifest.json">
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="/public/img/icons/icon-96x96.png">
+    <meta name="apple-mobile-web-app-status-bar" content="aa7700">
+    <meta name="theme-color" content="#800080">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container-nav">
+        <nav>
+            <a class="link-item" href="index.html">Home</a>
+            <a class="link-item" href="list.html">List</a>
+        </nav>
+    </div>
+    <div class="container">
+        <h5>OOPS!</h5>
+        <p>Currently, you cannot view this page offline</p>
+        <a href="/" class="button">Go to Homepage</a>
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then((reg) => console.log('service worker registered', reg))
+                .catch((err) => console.log('service worker not registered', err))
+        }
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>

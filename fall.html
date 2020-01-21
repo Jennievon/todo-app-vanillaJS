@@ -25,13 +25,7 @@
         <a class="link-item" href="fall.html">Fake</a>
       </nav>
     </div>
-    <h1>ToDo List App</h1>
-    <div class="container">
-      <form>
-        <input type="text" name="item" id="newItem" placeholder="Add New..." />
-      </form>
-      <ul id="todos"></ul>
-    </div>
+    <div class="container"></div>
     <script>
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
@@ -39,18 +33,6 @@
           .then(reg => console.log("service worker registered", reg))
           .catch(err => console.log("service worker not registered", err));
       }
-      form = document.querySelector("form");
-
-      form.addEventListener(
-        "submit",
-        function(event) {
-          event.preventDefault();
-          todos.innerHTML += "<li>" + newItem.value + "</li>";
-          store();
-          newItem.value = "";
-        },
-        false
-      );
     </script>
     <script src="main.js"></script>
   </body>
